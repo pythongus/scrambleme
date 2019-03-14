@@ -13,7 +13,9 @@ pylint = "*"
 
 [packages]
 flask = "*"
-flask-restful = "*"
+python-dotenv = "*"
+wikipedia = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
