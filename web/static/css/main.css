@@ -1,3 +1,32 @@
-body {
-    font-weight: bold;
+div.main {
+    alignment: center;
+}
+
+div.sides {
+    width: 25%;
+    float: left;
+    padding-bottom: 10%;
+}
+
+div.middle {
+    width: 50%;
+    float: left;
+}
+
+div.title, div.more {
+    text-align: center;
+}
+
+textarea {
+    width: 80%;
+    height: 150px;
+    margin: 20px 10% 0 10%;
+}
+
+div.button {
+    text-align: center;
+}
+
+input {
+    margin: 20px auto;
 }
