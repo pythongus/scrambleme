@@ -1,0 +1,10 @@
+The with clause was introduced with SQL:1999 as a set of optional features. Leaving the recursive
+variant aside, the features are T121 for top-level with clauses and T122 for with clauses in
+subqueries.
+
+The basic functionality of with is well-supported.
+The single area where products behave differently is name resolution. It is especially
+noteworthy that with is often treated like with recursive. The more subtle incompatibilities
+are related to qualified table names (schema.table cannot refer to a with query)
+and views used in the scope of with queries
+(the query inside the view does not “see” the outer with clause).
