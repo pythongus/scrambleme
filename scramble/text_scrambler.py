@@ -31,7 +31,7 @@ class TextScrambler():
         def scramble_line(line):
             return " ".join([self._scramble(word) for word in line])
 
-        if not isinstance(self, TextScrambler):
+        if not isinstance(self, TextScrambler) or not isinstance(self.text, str):
             return None
         lines = [line.split() for line in self.text.splitlines()]
         return "\n".join([scramble_line(line) for line in lines])
