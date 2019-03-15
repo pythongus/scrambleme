@@ -14,15 +14,25 @@ import math
 
 
 class TextScrambler():
+    """TextScrambler. Only one method is public. To run the application:
+
+    In [1]: from scrambler.text_scrambler import TextScrambler
+    In [2]: TextScrambler("Some text").scramble()
+    Out[2]: "Smoe txet"
+
+    The text may contain line breaks and special characters.
+    """
 
     def __init__(self, text):
         self.text = text
 
     def scramble(self):
-        """Runs the scramble script on the given file"""
+        """Runs the scramble app on the text assigned to the constructor."""
         def scramble_line(line):
             return " ".join([self._scramble(word) for word in line])
 
+        if not isinstance(self, TextScrambler):
+            return None
         lines = [line.split() for line in self.text.splitlines()]
         return "\n".join([scramble_line(line) for line in lines])
 
