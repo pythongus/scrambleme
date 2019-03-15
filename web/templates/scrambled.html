@@ -1,0 +1,15 @@
+{% extends "frame.html" %}
+{% block content %}
+                <div class="index">
+                    <p class="title">Scrambled Text </p>
+                    <form id="text_from" name="text_to_scramble">
+                        <div class="text_area">
+                            <textarea id="scramble_text" name="text" lines="50">{{ text }}</textarea>
+                        </div>
+                    </form>
+                    <div class="more">
+                        <a href="/">Home</a>&nbsp;|&nbsp; 
+                        <a href="/more">Would you like to know more about your brain?</a>
+                    </div>
+                </div>
+{% endblock %}

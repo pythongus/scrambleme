@@ -1,38 +1,58 @@
+body {
+    background-image: url("/static/img/brain.jpeg");
+}
+
 div.main {
-    alignment: center;
+    height: 100%;
 }
 
-div.sides {
+section.sides {
     width: 15%;
+    vertical-align: bottom;
     float: left;
-    padding-bottom: 10%;
+    clear: both;
 }
 
-div.middle {
+section.middle {
     width: 70%;
     float: left;
-    background-image: url("/static/img/brain.jpeg")
+    background-color: white;
 }
 
-div.title, div.more {
+.title, div.more {
     text-align: center;
 }
 
-div.title h1, div.title h3, div.more {
+div.title h1, div.title h3 {
     background-color: white;
     margin: 0 30%;
-    padding: 10px;
-}
-
-div.middle p {
-    background-color: white;
     padding: 20px;
 }
 
+div.more {
+    padding: 20px 0 30px 0;
+}
+
+div.index {
+    padding: 20px;
+}
+
+div.index {
+    text-align: justify;
+}
+
+section.middle p {
+    background-color: white;
+    padding: 20px;
+    margin: 0;
+}
+
 textarea {
-    width: 80%;
+    width: 95%;
     height: 150px;
-    margin: 20px 10% 0 10%;
+    margin: 20px;
+    resize: none;
+    word-wrap: normal;
 }
 
 div.button {
@@ -41,4 +61,22 @@ div.button {
 
 input {
     margin: 20px auto;
+}
+
+table {
+    border: none;
+}
+
+td {
+    vertical-align: top;
+    padding: 10px 20px 10px 20px;
+}
+
+.wiki_title {
+    width: 10%;
+}
+
+div.home {
+    text-align: center;
+    margin-top: 20px;
 }

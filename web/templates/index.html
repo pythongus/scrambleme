@@ -1,36 +1,21 @@
-<!doctype html>
-<html>
-    <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    </head>
-    <body>
-        <div class="main">
-            <div class="sides"></div>
-            <div class="middle">
-                <div class="title">
-                    <h1>Scramble Me</h1>
-                    <h3>A Teaser For Your Brain</h3>
-                </div>
-                <hr>
-                <p>Did you know that your brain is capable of some pretty amazing things, one of those is reading a scrambled text, as long as the first and the last letters of each word are kept in place?
-                <br />
-                <br />
-                Try it with any text in the box below.
-                </p>
-                <form id="text_from" name="text_to_scramble" method="POST" action="/scramble">
-                    <div class="text_area">
-                        <textarea id="scramble_text" name="text" lines="50"></textarea>
+{% extends "frame.html" %}
+{% block content %}
+                <div class="index">
+                    <p>Did you know that your brain is capable of some pretty amazing things, one of those is reading a scrambled text, as long as the first and the last letters of each word are kept in place?
+                    <br />
+                    <br />
+                    Try it with any text in the box below.
+                    </p>
+                    <form id="text_from" name="text_to_scramble" method="POST" action="/scramble">
+                        <div class="text_area">
+                            <textarea id="scramble_text" name="text" lines="50"></textarea>
+                        </div>
+                        <div class="button">
+                            <input type="submit" name="scramble" id="scramble" value="Scramble!" />
+                        </div>
+                    </form>
+                    <div class="more">
+                        <a href="/more">Would you like to know more about your brain?</a>
                     </div>
-                    <div class="button">
-                        <input type="submit" />
-                    </div>
-                </form>
-                <div class="more">
-                    <a href="/more">Would you like to know more about your brain?</a>
                 </div>
-            </div>
-            <div class="more"></div>
-            <div class="sides"></div>
-        </div>
-    </body>
-</html>
+{% endblock %}

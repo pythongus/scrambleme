@@ -1,23 +1,21 @@
-<!doctype html>
-<html>
-    <head>
-    </head>
-    <body>
+{% extends "frame.html" %}
+{% block content %}
         <div>
-            Wikipedia Links
-            <br>
-            <ul>
+            <p class="title">Wikipedia Links</p>
+            <table>
                 {%- for page in pages %}
-                <li><p class="title">
-                        <a href="https://en.wikipedia.org/wiki/{{ page.title }}">{{ page.title }}</a>
-                    </p>
-                    <p>&hellip; {{ page.snippet }}&hellip;</p>
-                </li>
+                <tr>
+                <td class="wiki_title">
+                    <a target="_blank" href="https://en.wikipedia.org/wiki/{{ page[0] }}">{{ page[0] }}</a>
+                </td>
+                <td class="wiki_snippet">
+                    &hellip; {{ page[1] }}&hellip;
+                </td>
+                </tr>
                 {%- endfor %}
-            </ul>
+            </table>
         </div>
-        <div>
+        <div class="home">
             <a href="/">Home</a>
         </div>
-    </body>
-</html>
+{% endblock %}

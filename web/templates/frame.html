@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <div class="main">
+            <section class="sides">&nbsp;</section>
+            <section class="middle">
+                <div class="title">
+                    <h1>Scramble Me</h1>
+                    <h3>A Teaser For Your Brain</h3>
+                </div>
+                <hr>
+                {% block content %}
+                {% endblock %}
+            </section>
+            <div class="more"></div>
+            <section class="sides">&nbsp;</section>
+        </div>
+    </body>
+</html>
