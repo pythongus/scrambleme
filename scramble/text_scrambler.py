@@ -28,16 +28,21 @@ class TextScrambler():
 
     def scramble(self):
         """Runs the scramble app on the text assigned to the constructor."""
+
         def scramble_line(line):
             return " ".join([self._scramble(word) for word in line])
 
-        if not isinstance(self, TextScrambler) or not isinstance(self.text, str):
+        def is_valid_object():
+            return isinstance(self, TextScrambler) and isinstance(self.text, str)
+
+        if not is_valid_object():
             return None
         lines = [line.split() for line in self.text.splitlines()]
         return "\n".join([scramble_line(line) for line in lines])
 
     def _scramble(self, word):
         """Scrambles the middle of a word, leaving first and last letters."""
+
         def word_has_number():
             return re.search(r"\d", word)
 
@@ -57,11 +62,13 @@ class TextScrambler():
         """Returns the indeces for first and last letter, not counting
         non-word characters.
         """
+        
         groups = re.search(r"(\W*)(\w*)(\W*)", word).groups()
         return 1 + len(groups[0]), - len(groups[2]) - 1
 
     def _permutate(self, word):
         """Permutates the word and returns a random pick of all permutations."""
+        
         perms = permutations(word)
         pick = randint(1, math.factorial(len(word)) - 1)
         next(perms)
