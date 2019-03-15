@@ -5,6 +5,16 @@
     <body>
         <div>
             Wikipedia Links
+            <br>
+            <ul>
+                {%- for page in pages %}
+                <li><p class="title">
+                        <a href="https://en.wikipedia.org/wiki/{{ page.title }}">{{ page.title }}</a>
+                    </p>
+                    <p>&hellip; {{ page.snippet }}&hellip;</p>
+                </li>
+                {%- endfor %}
+            </ul>
         </div>
         <div>
             <a href="/">Home</a>
