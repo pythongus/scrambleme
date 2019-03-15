@@ -20,16 +20,10 @@ class TextScrambler():
 
     def scramble(self):
         """Runs the scramble script on the given file"""
-        lines = [line.split() for line in self.text.splitlines()]
-        return self._scramble_words(lines)
-
-    def _scramble_words(self, lines):
-        """Scrambles the words and returns a list
-        of tuples, with the scrambled letters of the words.
-        """
         def scramble_line(line):
             return " ".join([self._scramble(word) for word in line])
 
+        lines = [line.split() for line in self.text.splitlines()]
         return "\n".join([scramble_line(line) for line in lines])
 
     def _scramble(self, word):
