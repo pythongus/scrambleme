@@ -20,36 +20,32 @@ class TextScrambler():
 
     def scramble(self):
         """Runs the scramble script on the given file"""
-        return self._scramble_words(self._get_words(self.text))
+        lines = [line.split() for line in self.text.splitlines()]
+        return self._scramble_words(lines)
 
-    def _get_words(self, text):
-        """Retuns all words in the contents of the given file name,
-        as a list of lists."""
-        return [line.split() for line in text.splitlines()]
-
-    def _scramble_words(self, words):
+    def _scramble_words(self, lines):
         """Scrambles the words and returns a list
         of tuples, with the scrambled letters of the words.
         """
         def scramble_line(line):
             return " ".join([self._scramble(word) for word in line])
 
-        return "\n".join([scramble_line(line) for line in words])
+        return "\n".join([scramble_line(line) for line in lines])
 
     def _scramble(self, word):
         """Scrambles the middle of a word, leaving first and last letters."""
-        def has_number():
+        def word_has_number():
             return re.search(r"\d", word)
 
-        def is_short(word_):
-            return len(word_) < 2
+        def text_is_short():
+            return len(text) < 2
 
         def rejoin_letters(*parts):
             return "".join(parts)
 
         pos = self._positions(word)
         text = word[slice(*pos)]
-        if is_short(text) or has_number():
+        if text_is_short() or word_has_number():
             return word
         return rejoin_letters(word[:pos[0]], self._permutate(text), word[pos[1]:])
 
