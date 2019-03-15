@@ -3,18 +3,30 @@ div.main {
 }
 
 div.sides {
-    width: 25%;
+    width: 15%;
     float: left;
     padding-bottom: 10%;
 }
 
 div.middle {
-    width: 50%;
+    width: 70%;
     float: left;
+    background-image: url("/static/img/brain.jpeg")
 }
 
 div.title, div.more {
     text-align: center;
+}
+
+div.title h1, div.title h3, div.more {
+    background-color: white;
+    margin: 0 30%;
+    padding: 10px;
+}
+
+div.middle p {
+    background-color: white;
+    padding: 20px;
 }
 
 textarea {
