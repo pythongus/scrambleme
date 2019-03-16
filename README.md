@@ -7,6 +7,7 @@
 
 * Flask
 * requests
+* scramble
 
 ## Host
 
@@ -23,20 +24,27 @@
 * https://scrambleme.herokuapp.com/
 
 ## Installing And Running
+
 Expanding the package
+
 * On Linux
+
 ```
 tar zxvf scrambleme-1.0.0.tgz
 ```
+
 * On Windows
+
     Double-click on the `tgz` file and use the `Extract` option.
 
-
-or Windows equivalent
+To install the modules
+```
 pip install -r requirements.txt
 pip install -é scrambleme-1.0.0/ # please use equivalente command for Windows
 ```
+
 To run the flask app
+
 × On Linux
 ```
 export FLASK_ENV=development
