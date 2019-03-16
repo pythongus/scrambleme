@@ -45,7 +45,7 @@ pip install -é scrambleme-1.0.0/ # please use equivalente command for Windows
 
 To run the flask app
 
-× On Linux
+* On Linux
 ```
 export FLASK_ENV=development
 FLASK_APP=./scrambleme-1.0.0/wsgi.py flask run
