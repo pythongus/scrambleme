@@ -1,6 +1,7 @@
 """
 Unit tests for the main web app.
 """
+import re
 import pytest
 from web.app import app
 
@@ -19,7 +20,7 @@ def test_scramble(client):
     text = "Test the scrambler"
     response = client.post("/scramble", data=dict(text=text))
     assert response.status_code == 200
-    assert response.json == "".join(reversed(text))
+    assert re.search(f"[{text}]{{{len(text)}}}", response.data.decode("UTF-8"))
 
 
 def test_more(client):

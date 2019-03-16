@@ -9,6 +9,7 @@ from flask import Flask, render_template, request, jsonify
 from flask import Markup
 from scramble.text_scrambler import TextScrambler
 app = Flask(__name__)
+textScrambler = TextScrambler()
 
 
 WIKI_URI = ("https://en.wikipedia.org/w/api.php?"
@@ -34,4 +35,4 @@ def wikipedia_links():
 @app.route("/scramble", methods=['POST'])
 def scramble():
     text = request.form["text"]
-    return render_template("scrambled.html", text=TextScrambler(text).scramble())
+    return render_template("scrambled.html", text=textScrambler.scramble(text))

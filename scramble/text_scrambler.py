@@ -23,21 +23,18 @@ class TextScrambler():
     The text may contain line breaks and special characters.
     """
 
-    def __init__(self, text):
-        self.text = text
-
-    def scramble(self):
+    def scramble(self, text):
         """Runs the scramble app on the text assigned to the constructor."""
 
         def scramble_line(line):
             return " ".join([self._scramble(word) for word in line])
 
-        def is_valid_object():
-            return isinstance(self, TextScrambler) and isinstance(self.text, str)
+        def is_valid_text():
+            return isinstance(text, str)
 
-        if not is_valid_object():
+        if not is_valid_text():
             return None
-        lines = [line.split() for line in self.text.splitlines()]
+        lines = [line.split() for line in text.splitlines()]
         return "\n".join([scramble_line(line) for line in lines])
 
     def _scramble(self, word):
