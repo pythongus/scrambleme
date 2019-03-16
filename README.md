@@ -1,7 +1,7 @@
 # Text Scrambler - A Teaser For Your Brain
 
 ## Abstract
-This is a simple application to demonstrate the micro-framework flask. It helps demonstrate how the human brain can easily read a text with scrambled words, as long as the first and last letters of the words are kept in place.
+This is a simple application to demonstrate the micro-framework Flask. It helps demonstrate how the human brain can easily read a text with scrambled words, as long as the first and last letters of the words are kept in place.
 
 The application has three pages:
 * The home page, where you can input the test text
@@ -10,8 +10,11 @@ The application has three pages:
 
 
 Each of these page is redirected to routers in the file
+
 > web/app.py
-by adults in the ABC. I file. t would you like to know more about your brain page is filled after a request to the wiki API with the search said on brain as the keyboardko 
+
+The *Would you like to know more about your brain?* page is built after a request to the Wikipedia RESTFUL API, with the search set on brain as the keyword. The first ten results are shown.
+
 ## Application Stack And Modules
 
 * Flask
@@ -23,10 +26,6 @@ by adults in the ABC. I file. t would you like to know more about your brain pag
 * [Heroku.com][2]
 
 [2]: https://www.heroku.com
-
-### API URL
-
-* https://scrambleme.herokuapp.com/api
 
 ### Active URL
 
@@ -49,7 +48,7 @@ tar zxvf scrambleme-1.0.0.tgz
 To install the modules
 ```
 pip install -r requirements.txt
-pip install -é scrambleme-1.0.0/ # please use equivalente command for Windows
+pip install -é scrambleme-1.0.0/ # on Windows, the path separator is `\`.
 ```
 
 To run the flask app
