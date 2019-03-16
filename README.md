@@ -1,21 +1,54 @@
-# Text Scrambler - A Simple Test For Your Brain
+# Text Scrambler - A Teaser For Your Brain
 
-## Application Stack
+## Abstract
+
+
+## Application Stack And Modules
 
 * Flask
-* Flask-Restful
+* requests
 
 ## Host
 
-* Heroku.com
+* [Heroku.com][2]
+
+[2]: https://www.heroku.com
 
 ### API URL
 
 * https://scrambleme.herokuapp.com/api
 
-#### End Points
+### Active URL
 
-* https://scrambleme.herokuapp.com/api/scramble
+* https://scrambleme.herokuapp.com/
+
+## Installing And Running
+Expanding the package
+* On Linux
+```
+tar zxvf scrambleme-1.0.0.tgz
+```
+* On Windows
+    Double-click on the `tgz` file and use the `Extract` option.
+
+
+or Windows equivalent
+pip install -r requirements.txt
+pip install -é scrambleme-1.0.0/ # please use equivalente command for Windows
+```
+To run the flask app
+× On Linux
+```
+export FLASK_ENV=development
+FLASK_APP=./scrambleme-1.0.0/wsgi.py flask run
+```
+* On Windows
+```
+set FLASK_ENV=development
+set FLASK_APP=.\scrambleme-1.0.0\wsgi.py
+flask run
+```
+
 
 ## Contact
 
